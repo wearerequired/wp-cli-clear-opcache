@@ -1,0 +1,29 @@
+{
+	"name": "wearerequired/wp-cli-clear-opcache",
+	"description": "Use WP-CLI to clear the Opcache for a site via HTTP.",
+	"type": "wordpress-plugin",
+	"homepage": "https://github.com/wearerequired/wp-cli-clear-opcache",
+	"license": "GPL-2.0+",
+	"authors": [
+		{
+			"name": "required",
+			"email": "support@required.ch",
+			"homepage": "https://required.com",
+			"role": "Developer"
+		}
+	],
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/wearerequired/wp-cli-clear-opcache"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"Required\\ClearOpcache\\": "inc"
+		}
+	},
+	"require": {
+		"php": ">=7.0"
+	}
+}
