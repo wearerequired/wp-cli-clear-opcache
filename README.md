@@ -1,32 +1,16 @@
-ocean90/wp-cli-flush-cache
+WP-CLI Clear Opcache
 =========================
 
-Clear the cache of a user or a site.
+Use WP-CLI to clear the Opcache for a site via HTTP.
 
-## Using
-
-```
-wp user flush-cache <user>
-```
-
-**OPTIONS**
-
-	<user>
-		User ID, user email, or user login.
-
----
+## Usage
 
 ```
-wp site flush-cache <id>
+wp opcache clear
 ```
 
-**OPTIONS**
+## Installation
 
-	<id>
-		ID of a site.
+Installing this package requires WP-CLI to be installed on your server. Update to the latest stable release with `wp cli update`.
 
-## Installing
-
-Installing this package requires WP-CLI v0.23.0 or greater. Update to the latest stable release with `wp cli update`.
-
-Once you've done so, you can install this package with `wp package install ocean90/wp-cli-flush-cache`.
+Once you've done so, you can install this plugin with `composer require wearerequired/wp-cli-clear-opcache`.
