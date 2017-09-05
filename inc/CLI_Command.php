@@ -14,7 +14,7 @@ class CLI_Command extends \WP_CLI_Command {
 	public function __invoke( array $args, array $assoc_args ): void {
 		$nonce = wp_create_nonce( 'clear-opcache' );
 
-		$response = wp_remot_get( esc_url( add_query_arg( [
+		$response = wp_remote_get( esc_url( add_query_arg( [
 			'action' => 'clear-opcache',
 			'_nonce' => $nonce,
 		], home_url() ) ) );
