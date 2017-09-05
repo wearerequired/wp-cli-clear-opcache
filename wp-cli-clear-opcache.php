@@ -28,12 +28,14 @@
  * @package Required\ClearOpcache
  */
 
-if ( ! class_exists( 'WP_CLI' ) ) {
-	return;
-}
-
 if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 	require __DIR__ . '/vendor/autoload.php';
+}
+
+add_action( 'plugins_loaded', '\Required\ClearOpcache\bootstrap' );
+
+if ( ! class_exists( 'WP_CLI' ) ) {
+	return;
 }
 
 if ( ! class_exists( 'Required\\ClearOpcache\\CLI_Command' ) ) {
@@ -41,7 +43,5 @@ if ( ! class_exists( 'Required\\ClearOpcache\\CLI_Command' ) ) {
 
 	return;
 }
-
-add_action( 'plugins_loaded', '\Required\ClearOpcache\bootstrap' );
 
 WP_CLI::add_command( 'opcache clear', \Required\ClearOpcache\CLI_Command::class );
