@@ -42,6 +42,6 @@ if ( ! class_exists( 'Required\\ClearOpcache\\CLI_Command' ) ) {
 	return;
 }
 
-add_action( 'plugins_loaded', __NAMESPACE__ . '\\bootstrap' );
+add_action( 'plugins_loaded', '\Required\ClearOpcache\bootstrap' );
 
 WP_CLI::add_command( 'opcache clear', \Required\ClearOpcache\CLI_Command::class );
