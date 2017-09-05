@@ -3,7 +3,7 @@
 namespace Required\ClearOpcache;
 
 function bootstrap() {
-	add_action( 'init', __NAMESPACE__ . '\\clear_cache' );
+	add_action( 'init', '\Required\ClearOpcache\clear_cache' );
 }
 
 function clear_cache() {
