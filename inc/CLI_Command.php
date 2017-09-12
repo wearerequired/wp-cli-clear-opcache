@@ -21,13 +21,9 @@ class CLI_Command extends \WP_CLI_Command {
 
 		$status = wp_remote_retrieve_response_code( $response );
 
-		if ( '' === $status ) {
-			if ( is_wp_error( $response ) ) {
-				/* @var \WP_Error $response */
-				\WP_CLI::error( 'There was an error clearing the OPcache: ' . $response->get_error_message() );
-			}
-
-			\WP_CLI::error( 'There was an unknown error clearing the OPcache.' );
+		if ( is_wp_error( $response ) ) {
+			/* @var \WP_Error $response */
+			\WP_CLI::error( 'There was an error clearing the OPcache: ' . $response->get_error_message() );
 		}
 
 		if ( 401 === $status ) {
@@ -41,5 +37,7 @@ class CLI_Command extends \WP_CLI_Command {
 		if ( 202 === $status ) {
 			\WP_CLI::success( 'The OPcache was successfully cleared!' );
 		}
+
+		\WP_CLI::error( 'There was an unknown error clearing the OPcache.' );
 	}
 }
