@@ -1,7 +1,7 @@
-WP-CLI Clear Opcache
+WP-CLI Clear OPcache
 =========================
 
-Use WP-CLI to clear the Opcache for a site via HTTP.
+Use WP-CLI to clear the OPcache for a site via HTTP.
 
 ## Usage
 

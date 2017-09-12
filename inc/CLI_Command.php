@@ -4,11 +4,11 @@ namespace Required\ClearOpcache;
 
 class CLI_Command extends \WP_CLI_Command {
 	/**
-	 * Clear the Opcache for the current WordPress site.
+	 * Clear the OPcache for the current WordPress site.
 	 *
 	 * ## EXAMPLES
 	 *
-	 *     # Clear the Opcache for the website.
+	 *     # Clear the OPcache for the website.
 	 *     $ wp opcache clear
 	 */
 	public function __invoke( array $args, array $assoc_args ): void {
@@ -24,18 +24,18 @@ class CLI_Command extends \WP_CLI_Command {
 		if ( '' === $status ) {
 			if ( is_wp_error( $response ) ) {
 				/* @var \WP_Error $response */
-				\WP_CLI::error( 'There was an error clearing the Opcache: ' . $response->get_error_message() );
+				\WP_CLI::error( 'There was an error clearing the OPcache: ' . $response->get_error_message() );
 			}
 
-			\WP_CLI::error( 'There was an unknown error clearing the Opcache' );
+			\WP_CLI::error( 'There was an unknown error clearing the OPcache' );
 		}
 
 		if ( 400 === $status ) {
-			\WP_CLI::error( 'There was an unknown error clearing the Opcache. Maybe Opcache is disabled?' );
+			\WP_CLI::error( 'There was an unknown error clearing the OPcache. Maybe OPcache is disabled?' );
 		}
 
 		if ( 202 === $status ) {
-			\WP_CLI::success( 'The Opcache was successfully cleared!' );
+			\WP_CLI::success( 'The OPcache was successfully cleared!' );
 		}
 	}
 }
