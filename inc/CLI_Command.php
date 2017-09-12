@@ -27,7 +27,11 @@ class CLI_Command extends \WP_CLI_Command {
 				\WP_CLI::error( 'There was an error clearing the OPcache: ' . $response->get_error_message() );
 			}
 
-			\WP_CLI::error( 'There was an unknown error clearing the OPcache' );
+			\WP_CLI::error( 'There was an unknown error clearing the OPcache.' );
+		}
+
+		if ( 401 === $status ) {
+			\WP_CLI::error( 'It seems like your site requires some sort of authentication. Please allow your server\'s IP address to bypass authentication.' );
 		}
 
 		if ( 400 === $status ) {
