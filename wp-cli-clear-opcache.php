@@ -32,7 +32,7 @@ if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 	require __DIR__ . '/vendor/autoload.php';
 }
 
-add_action( 'plugins_loaded', '\Required\ClearOpcache\bootstrap' );
+add_action( 'plugins_loaded', '\Required\ClearOpcache\maybe_clear_cache', 1 );
 
 if ( ! class_exists( 'WP_CLI' ) ) {
 	return;
