@@ -12,11 +12,10 @@
             "role": "Developer"
         }
     ],
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/wearerequired/wp-cli-clear-opcache"
-        }
+    "keywords": [
+        "wordpress",
+        "wp-cli",
+        "opcache"
     ],
     "autoload": {
         "files": [
@@ -29,5 +28,8 @@
     "require": {
         "php": ">=7.0",
         "ext-Zend-OPcache": "*"
+    },
+    "suggest": {
+        "wp-cli/wp-cli": "Adds a command line interface to WordPress"
     }
 }
