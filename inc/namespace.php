@@ -7,8 +7,8 @@ function bootstrap() {
 }
 
 function clear_cache() {
-	if ( isset( $_GET['action'], $_GET['_nonce'] ) && 'clear-opcache' === $_GET['action'] ) {
-		$nonce = wp_verify_nonce( $_GET['_nonce'], 'clear-opcache' );
+	if ( isset( $_GET['opcache_action'], $_GET['opcache_nonce'] ) && 'clear-opcache' === $_GET['opcache_action'] ) {
+		$nonce = wp_verify_nonce( $_GET['opcache_nonce'], 'clear-opcache' );
 
 		if ( ! $nonce ) {
 			status_header( 400 );
