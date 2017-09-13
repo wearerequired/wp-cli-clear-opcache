@@ -49,7 +49,7 @@ class CLI_Command extends WP_CLI_Command {
 	}
 
 	/**
-	 * Invalidates a cached script for the current WordPress site.
+	 * Invalidate a cached script for the current WordPress site.
 	 *
 	 * ## OPTIONS
 	 *
