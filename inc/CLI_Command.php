@@ -72,7 +72,7 @@ class CLI_Command extends WP_CLI_Command {
 			add_query_arg( [
 				'opcache_action' => 'clear-opcache',
 				'opcache_script' => $script,
-				'opcache_force'  => $assoc_args['force'],
+				'opcache_force'  => WP_CLI\Utils\get_flag_value( $assoc_args, 'force', false ),
 				'opcache_nonce'  => wp_create_nonce( 'clear-opcache' ),
 			], home_url( '/' ) ),
 			[
