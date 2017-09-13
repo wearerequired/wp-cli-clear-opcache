@@ -67,10 +67,11 @@ class CLI_Command extends WP_CLI_Command {
 	 *     Success: The OPcache was successfully invalidated for foo/bar.php.
 	 */
 	public function invalidate( array $args, array $assoc_args ): void {
+		$script = $args['0'];
 		$response = wp_remote_post(
 			add_query_arg( [
 				'opcache_action' => 'clear-opcache',
-				'opcache_script' => $args['script'],
+				'opcache_script' => $script,
 				'opcache_force'  => $assoc_args['force'],
 				'opcache_nonce'  => wp_create_nonce( 'clear-opcache' ),
 			], home_url( '/' ) ),
@@ -94,7 +95,7 @@ class CLI_Command extends WP_CLI_Command {
 		}
 
 		if ( 202 === $status ) {
-			WP_CLI::success( sprintf( 'The OPcache was successfully invalidated for %s', $args['script'] ) );
+			WP_CLI::success( sprintf( 'The OPcache was successfully invalidated for %s.', $script ) );
 
 			return;
 		}
