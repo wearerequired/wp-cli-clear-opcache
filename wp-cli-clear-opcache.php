@@ -38,8 +38,8 @@ if ( ! class_exists( 'WP_CLI' ) ) {
 	return;
 }
 
-if ( ! class_exists( 'Required\\ClearOpcache\\CLI_Command' ) ) {
-	trigger_error( sprintf( '%s does not exist. Check Composer\'s autoloader.',  'Required\\ClearOpcache\\CLI_Command' ), E_USER_WARNING );
+if ( ! class_exists( 'Required\ClearOpcache\CLI_Command' ) ) {
+	trigger_error( sprintf( '%s does not exist. Check Composer\'s autoloader.', 'Required\ClearOpcache\CLI_Command' ), E_USER_WARNING );
 
 	return;
 }
