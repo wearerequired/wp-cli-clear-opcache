@@ -36,6 +36,8 @@ class CLI_Command extends \WP_CLI_Command {
 
 		if ( 202 === $status ) {
 			\WP_CLI::success( 'The OPcache was successfully cleared!' );
+
+			return;
 		}
 
 		\WP_CLI::error( 'There was an unknown error clearing the OPcache.' );
