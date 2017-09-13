@@ -3,8 +3,9 @@
 namespace Required\ClearOpcache;
 
 use WP_CLI;
+use WP_CLI_Command;
 
-class CLI_Command extends \WP_CLI_Command {
+class CLI_Command extends WP_CLI_Command {
 	/**
 	 * Clear the OPcache for the current WordPress site.
 	 *
