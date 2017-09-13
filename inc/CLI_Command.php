@@ -13,6 +13,7 @@ class CLI_Command extends WP_CLI_Command {
 	 *
 	 *     # Clear the OPcache for the website.
 	 *     $ wp opcache clear
+	 *     Success: The OPcache was successfully cleared!
 	 */
 	public function clear(): void {
 		$response = wp_remote_post(
@@ -63,6 +64,7 @@ class CLI_Command extends WP_CLI_Command {
 	 *
 	 *     # Invalidate a cached script.
 	 *     $ wp opcache invalidate foo/bar.php
+	 *     Success: The OPcache was successfully invalidated for foo/bar.php.
 	 */
 	public function invalidate( array $args, array $assoc_args ): void {
 		$response = wp_remote_post(
