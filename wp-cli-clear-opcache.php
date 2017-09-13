@@ -44,4 +44,4 @@ if ( ! class_exists( 'Required\\ClearOpcache\\CLI_Command' ) ) {
 	return;
 }
 
-WP_CLI::add_command( 'opcache clear', \Required\ClearOpcache\CLI_Command::class );
+WP_CLI::add_command( 'opcache', \Required\ClearOpcache\CLI_Command::class );

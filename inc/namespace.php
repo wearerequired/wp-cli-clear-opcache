@@ -15,14 +15,20 @@ function clear_cache() {
 			die();
 		}
 
-		$reset = opcache_reset();
-
-		if ( ! $reset ) {
-			status_header( 400 );
-			die();
+		if ( isset( $_GET['opcache_script'] ) ) {
+			if ( opcache_invalidate( wp_unslash( $_GET['opcache_script'] ), isset( $_GET['opcache_force'] ) ) ) {
+				status_header( 202 );
+			} else {
+				status_header( 400 );
+			}
+		} else {
+			if ( opcache_reset() ) {
+				status_header( 202 );
+			} else {
+				status_header( 400 );
+			}
 		}
 
-		status_header( 202 );
 		die();
 	}
 }
