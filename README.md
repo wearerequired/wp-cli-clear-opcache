@@ -6,7 +6,11 @@ Use WP-CLI to clear the OPcache for a site via HTTP.
 ## Usage
 
 ```
-wp opcache clear
+# Clear the OPcache for the website.
+$ wp opcache clear
+
+# Invalidate a cached script.
+$ wp opcache invalidate 'foo/bar.php'
 ```
 
 ## Installation
