@@ -92,7 +92,7 @@ class CLI_Command extends WP_CLI_Command {
 		}
 
 		if ( 202 === $status ) {
-			WP_CLI::success( 'The OPcache was successfully cleared!' );
+			WP_CLI::success( sprintf( 'The OPcache was successfully invalidated for %s', $args['script'] ) );
 
 			return;
 		}
