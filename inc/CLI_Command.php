@@ -14,10 +14,15 @@ class CLI_Command extends \WP_CLI_Command {
 	public function __invoke( array $args, array $assoc_args ): void {
 		$nonce = wp_create_nonce( 'clear-opcache' );
 
-		$response = wp_remote_get( add_query_arg( [
-			'opcache_action' => 'clear-opcache',
-			'opcache_nonce' => $nonce,
-		], home_url( '/' ) ) );
+		$response = wp_remote_get(
+			add_query_arg( [
+				'opcache_action' => 'clear-opcache',
+				'opcache_nonce'  => $nonce,
+			], home_url( '/' ) ),
+			[
+				'sslverify' => false,
+			]
+		);
 
 		if ( is_wp_error( $response ) ) {
 			/* @var \WP_Error $response */
