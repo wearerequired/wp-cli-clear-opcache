@@ -19,12 +19,12 @@ class CLI_Command extends \WP_CLI_Command {
 			'_nonce' => $nonce,
 		], home_url( '/' ) ) );
 
-		$status = wp_remote_retrieve_response_code( $response );
-
 		if ( is_wp_error( $response ) ) {
 			/* @var \WP_Error $response */
 			\WP_CLI::error( 'There was an error clearing the OPcache: ' . $response->get_error_message() );
 		}
+
+		$status = wp_remote_retrieve_response_code( $response );
 
 		if ( 401 === $status ) {
 			\WP_CLI::error( 'It seems like your site requires some sort of authentication. Please allow your server\'s IP address to bypass authentication.' );
