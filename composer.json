@@ -7,8 +7,18 @@
     "authors": [
         {
             "name": "required",
-            "email": "support@required.ch",
+            "email": "info@required.ch",
             "homepage": "https://required.com",
+            "role": "Company"
+        },
+        {
+            "name": "Pascal Birchler",
+            "email": "pascal@required.ch",
+            "role": "Developer"
+        },
+        {
+            "name": "Dominik Schilling",
+            "email": "dominik@required.ch",
             "role": "Developer"
         }
     ],
