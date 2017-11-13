@@ -15,7 +15,7 @@ class CLI_Command extends WP_CLI_Command {
 	 *     $ wp opcache clear
 	 *     Success: The OPcache was successfully cleared!
 	 */
-	public function clear(): void {
+	public function clear() {
 		$response = wp_remote_post(
 			add_query_arg( [
 				'opcache_action' => 'clear-opcache',
@@ -66,7 +66,7 @@ class CLI_Command extends WP_CLI_Command {
 	 *     $ wp opcache invalidate foo/bar.php
 	 *     Success: The OPcache was successfully invalidated for foo/bar.php.
 	 */
-	public function invalidate( array $args, array $assoc_args ): void {
+	public function invalidate( array $args, array $assoc_args ) {
 		$script = $args['0'];
 		$response = wp_remote_post(
 			add_query_arg( [
