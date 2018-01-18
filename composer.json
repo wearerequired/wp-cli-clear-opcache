@@ -3,7 +3,7 @@
     "description": "Use WP-CLI to clear the OPcache for a site via HTTP.",
     "type": "wordpress-plugin",
     "homepage": "https://github.com/wearerequired/wp-cli-clear-opcache",
-    "license": "GPL-2.0+",
+    "license": "GPL-2.0-or-later",
     "authors": [
         {
             "name": "required",
@@ -27,6 +27,8 @@
         "wp-cli",
         "opcache"
     ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "autoload": {
         "files": [
             "inc/namespace.php"
@@ -39,7 +41,20 @@
         "php": ">=7.0",
         "ext-Zend-OPcache": "*"
     },
+    "require-dev": {
+        "behat/behat": "~2.5"
+    },
     "suggest": {
         "wp-cli/wp-cli": "Adds a command line interface to WordPress"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        },
+        "commands": [
+            "opcache clear",
+            "opcache invalidate"
+        ],
+        "bundled": false
     }
 }
