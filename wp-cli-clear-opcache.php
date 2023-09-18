@@ -3,7 +3,7 @@
  * Plugin Name: WP-CLI Clear OPcache
  * Plugin URI:  https://github.com/wearerequired/wp-cli-clear-opcache
  * Description: Use WP-CLI to clear the OPcache for a site via HTTP.
- * Version:     1.0.1
+ * Version:     1.0.2
  * Author:      required
  * Author URI:  https://required.com
  * License:     GPL v2.0+
