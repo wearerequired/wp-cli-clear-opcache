@@ -16,6 +16,8 @@ class CLI_Command extends WP_CLI_Command {
 	 *     Success: The OPcache was successfully cleared!
 	 */
 	public function clear() {
+		wp_set_current_user( 0 );
+
 		$response = wp_remote_post(
 			add_query_arg( [
 				'opcache_action' => 'clear-opcache',
@@ -67,6 +69,8 @@ class CLI_Command extends WP_CLI_Command {
 	 *     Success: The OPcache was successfully invalidated for foo/bar.php.
 	 */
 	public function invalidate( array $args, array $assoc_args ) {
+		wp_set_current_user( 0 );
+
 		$script = $args['0'];
 		$response = wp_remote_post(
 			add_query_arg( [
